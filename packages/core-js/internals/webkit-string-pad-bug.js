@@ -1,4 +1,4 @@
-// https://github.com/zloirock/core-js/issues/280
+// https://github.com/ivajkin/core-js/issues/280
 var userAgent = require('../internals/user-agent');
 
 // eslint-disable-next-line unicorn/no-unsafe-regex

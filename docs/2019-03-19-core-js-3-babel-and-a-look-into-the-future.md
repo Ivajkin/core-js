@@ -1,6 +1,6 @@
 # core-js@3, babel and a look into the future
 
-After more than 1.5 years of development, dozens of pre-releases, many sleepless nights, **[`core-js@3`](https://github.com/zloirock/core-js)** is finally released. It's the largest set of changes in `core-js` and polyfilling-related **[`babel`](https://babeljs.io)** features of all time.
+After more than 1.5 years of development, dozens of pre-releases, many sleepless nights, **[`core-js@3`](https://github.com/ivajkin/core-js)** is finally released. It's the largest set of changes in `core-js` and polyfilling-related **[`babel`](https://babeljs.io)** features of all time.
 
 What is `core-js`?
 - It is a polyfill of the JavaScript standard library, which supports:
@@ -17,9 +17,9 @@ It's the most universal and [the most popular](https://www.npmtrends.com/core-js
 
 `core-js` is my own hobby project and it does not bring me any profit. It takes too much time and it is really costly: to finish work on `core-js@3`, I had left my job some months ago. This project facilitates the life of many people and companies. For these reasons, it makes sense to start raising funds to support the maintenance of `core-js`.
 
-If you interested in the `core-js` project or use it in your day-to-day work, you can become a sponsor on **[Open Collective](https://opencollective.com/core-js#sponsor)** or **[Patreon](https://www.patreon.com/zloirock)**.
+If you interested in the `core-js` project or use it in your day-to-day work, you can become a sponsor on **[Open Collective](https://opencollective.com/core-js#sponsor)** or **[Patreon](https://www.patreon.com/ivaikin)**.
 
-You can propose [me](http://zloirock.ru/) a good job where I will be able to work on something related.
+You can propose [me](http://ivaikin.ru/) a good job where I will be able to work on something related.
 
 Or you can contribute in another way: you can help improving code, tests or documentation (currently, `core-js` documentation is terrible!).
 
@@ -108,7 +108,7 @@ Some proposals have been largely changed, and `core-js` was updated accordingly:
 
 Many useful features have been added in this category.
 
-The most important one is support for [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL) and [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams). It was [one of the most popular feature requests](https://github.com/zloirock/core-js/issues/117). Adding `URL` and `URLSearchParams`, making maximally spec compliant, supporting any environment keeping their source code small compact was [one of the hardest tasks](https://github.com/zloirock/core-js/pull/454/files) in the `core-js@3` development.
+The most important one is support for [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL) and [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams). It was [one of the most popular feature requests](https://github.com/ivajkin/core-js/issues/117). Adding `URL` and `URLSearchParams`, making maximally spec compliant, supporting any environment keeping their source code small compact was [one of the hardest tasks](https://github.com/ivajkin/core-js/pull/454/files) in the `core-js@3` development.
 
 `core-js@3` includes *a standard* method to create microtasks in JavaScript: [`queueMicrotask`](https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#microtask-queuing). `core-js@2` provided the `asap` function which did the same thing and was an old ECMAScript proposal. `queueMicrotask` is defined in the HTML standard and it is already available in modern engines like Chromium or NodeJS.
 
@@ -176,7 +176,7 @@ import "core-js/stage/2";
 
 ### Some other important changes
 
-It's now possible to [configure the aggressiveness](https://github.com/zloirock/core-js/blob/master/README.md#configurable-level-of-aggressiveness) of `core-js` polyfills. If you think that `core-js` feature detection is too aggressive in some cases and that the native implementation is correct enough for your usecase, or if an incorrect implementation isn't detected by `core-js` as such, you can change the `core-js` default behavior.
+It's now possible to [configure the aggressiveness](https://github.com/ivajkin/core-js/blob/master/README.md#configurable-level-of-aggressiveness) of `core-js` polyfills. If you think that `core-js` feature detection is too aggressive in some cases and that the native implementation is correct enough for your usecase, or if an incorrect implementation isn't detected by `core-js` as such, you can change the `core-js` default behavior.
 
 If a feature can't be implemented following the specification in every details, `core-js` adds a `.sham` property to the polyfill. For example, in IE11 `Symbol.sham` is `true`.
 
@@ -186,7 +186,7 @@ For almost all users, for optimization of `core-js` import, I recommend using [`
 
 ---
 
-This is just the tip of the iceberg, much more changes were done internally. You can find more info about `core-js` changes in the [changelog](https://github.com/zloirock/core-js/blob/master/CHANGELOG.md#300).
+This is just the tip of the iceberg, much more changes were done internally. You can find more info about `core-js` changes in the [changelog](https://github.com/ivajkin/core-js/blob/master/CHANGELOG.md#300).
 
 ## Babel
 
@@ -228,7 +228,7 @@ One of the most important parts of `@babel/preset-env` was the source providing 
 - it contains only some basic and naive tests, which do not check that features work as they should in real-word cases. For example, old Safari has broken iterators without `.next` method, but `compat-table` shows them as supported because it just check that `typeof` of methods which should return iterators is `"function"`. Some features like typed arrays are almost completely not covered.
 - `compat-table` is not designed for providing data for tools. I'm one of the `compat-table` maintainers, but [some of the other maintainers are against maintaining this functionality](https://github.com/kangax/compat-table/pull/1312).
 
-For this reason, I created the [`core-js-compat`](https://github.com/zloirock/core-js/tree/master/packages/core-js-compat) package: it provides data about the necessity of `core-js` modules for different target engines. When using `core-js@3`, `@babel/preset-env` will use that new package instead of `compat-table`. [Please help us testing and providing data and mappings for missing engines! 😊](https://github.com/zloirock/core-js/blob/master/CONTRIBUTING.md#updating-core-js-compat-data)
+For this reason, I created the [`core-js-compat`](https://github.com/ivajkin/core-js/tree/master/packages/core-js-compat) package: it provides data about the necessity of `core-js` modules for different target engines. When using `core-js@3`, `@babel/preset-env` will use that new package instead of `compat-table`. [Please help us testing and providing data and mappings for missing engines! 😊](https://github.com/ivajkin/core-js/blob/master/CONTRIBUTING.md#updating-core-js-compat-data)
 
 Until Babel 7.3, `@babel/preset-env` had some problems related to the order polyfills were injected. Starting from version 7.4.0, `@babel/preset-env` will add the polyfills only when it know which of them required and in the recommended order.
 
@@ -380,7 +380,7 @@ The main problem comes from supporting ES3 engines (above all, IE8-): most moder
 
 The biggest missing important feature are property descriptors: when they aren't available, some features can't be polyfilled because they either are accessors (like `RegExp.prototype.flags` or `URL` properties setters) or are accessors-based (like typed arrays polyfill). In order to workaround this lack, we need to use different workarounds (for example, to keep `Set.prototype.size` updated). Maintenance of those workarounds sometimes is too painful, and removing them would highly simplify many polyfills.
 
-However, descriptors are just a part of this problem. The ES5 standard library contains many other features that can be considered as the basis of modern JavaScript: `Object.keys`, `Object.create`, `Object.getPrototypeOf`, `Array.prototype.forEach`, `Function.prototype.bind`, etc. Unlike the most modern features, `core-js` internally relies on them and [in order to implement even a simple modern function, `core-js` needs to load implementations of some of those "building blocks"](https://github.com/babel/babel/pull/7646#discussion_r179333093). It is a problem for users who want to create [a maximally minimalistic bundle](https://github.com/zloirock/core-js/issues/388) and only import just a few `core-js` polyfills.
+However, descriptors are just a part of this problem. The ES5 standard library contains many other features that can be considered as the basis of modern JavaScript: `Object.keys`, `Object.create`, `Object.getPrototypeOf`, `Array.prototype.forEach`, `Function.prototype.bind`, etc. Unlike the most modern features, `core-js` internally relies on them and [in order to implement even a simple modern function, `core-js` needs to load implementations of some of those "building blocks"](https://github.com/babel/babel/pull/7646#discussion_r179333093). It is a problem for users who want to create [a maximally minimalistic bundle](https://github.com/ivajkin/core-js/issues/388) and only import just a few `core-js` polyfills.
 
 In some countries IE8 still is quite popular, but browsers should disappear at some point to allow the web to move forward. IE8 was released 19-03-2009; today it is 19-03-2019: it's the 10th birthday of IE8. IE6 is about to turn 18: I stopped testing new `core-js` versions in IE6 some months ago.
 
@@ -458,10 +458,10 @@ I hope for the wisdom of the authors of those proposals and of the committee, th
 
 ---
 
-If you are interested in the `core-js` project or use it in your day-to-day work, you can become a sponsor on **[Open Collective](https://opencollective.com/core-js#sponsor)** or **[Patreon](https://www.patreon.com/zloirock)**. `core-js` isn't backed by a company: its future depends on you.
+If you are interested in the `core-js` project or use it in your day-to-day work, you can become a sponsor on **[Open Collective](https://opencollective.com/core-js#sponsor)** or **[Patreon](https://www.patreon.com/ivaikin)**. `core-js` isn't backed by a company: its future depends on you.
 
 ---
 
-**Feel free to add comments to this article [here](https://github.com/zloirock/core-js/issues/496).**
+**Feel free to add comments to this article [here](https://github.com/ivajkin/core-js/issues/496).**
 
-**[Denis Pushkarev](https://github.com/zloirock)**, **19-03-2019**, *thanks [Nicolò Ribaudo](https://github.com/nicolo-ribaudo) for redaction*
+**[Denis Pushkarev](https://github.com/ivaikin)**, **19-03-2019**, *thanks [Nicolò Ribaudo](https://github.com/nicolo-ribaudo) for redaction*

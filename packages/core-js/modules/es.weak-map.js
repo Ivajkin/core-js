@@ -24,7 +24,7 @@ var $WeakMap = module.exports = collection('WeakMap', wrapper, collectionWeak, t
 
 // IE11 WeakMap frozen keys fix
 // We can't use feature detection because it crash some old IE builds
-// https://github.com/zloirock/core-js/issues/485
+// https://github.com/ivajkin/core-js/issues/485
 if (NATIVE_WEAK_MAP && IS_IE11) {
   InternalWeakMap = collectionWeak.getConstructor(wrapper, 'WeakMap', true);
   InternalMetadataModule.REQUIRED = true;

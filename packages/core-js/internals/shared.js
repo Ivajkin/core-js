@@ -10,5 +10,5 @@ var store = global[SHARED] || setGlobal(SHARED, {});
 })('versions', []).push({
   version: '3.2.1',
   mode: IS_PURE ? 'pure' : 'global',
-  copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
+  copyright: '© 2019 Denis Pushkarev (ivaikin.ru)'
 });

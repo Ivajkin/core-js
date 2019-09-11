@@ -4,7 +4,7 @@
   "version": "3.2.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zloirock/core-js.git"
+    "url": "https://github.com/ivajkin/core-js.git"
   },
   "main": "index.js",
   "license": "MIT",

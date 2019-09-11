@@ -1,4 +1,4 @@
-[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.
+[`core-js-compat` package](https://github.com/ivajkin/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/ivajkin/core-js) modules and API for getting a list of required core-js modules by browserslist query.
 
 ```js
 const {
@@ -34,4 +34,4 @@ console.log(targets);
 */
 ```
 
-If you want to add new / update data about modules required for target engines, [follow this instruction](https://github.com/zloirock/core-js/blob/master/CONTRIBUTING.md#updating-core-js-compat-data).
+If you want to add new / update data about modules required for target engines, [follow this instruction](https://github.com/ivajkin/core-js/blob/master/CONTRIBUTING.md#updating-core-js-compat-data).

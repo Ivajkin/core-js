@@ -63,14 +63,14 @@ QUnit.test('Reflect.set', assert => {
     assert.strictEqual(set(target, 'c', 2, target), false, 'set c');
     assert.strictEqual(target.c, 1, 'set c');
 
-    // https://github.com/zloirock/core-js/issues/392
+    // https://github.com/ivajkin/core-js/issues/392
     let o = defineProperty({}, 'test', {
       writable: false,
       configurable: true,
     });
     assert.strictEqual(set(getPrototypeOf(o), 'test', 1, o), false);
 
-    // https://github.com/zloirock/core-js/issues/393
+    // https://github.com/ivajkin/core-js/issues/393
     o = defineProperty({}, 'test', {
       get() { /* empty */ },
     });

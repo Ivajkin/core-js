@@ -283,7 +283,7 @@ if (FORCED) {
       return new PromiseConstructor(function (resolve, reject) {
         nativeThen.call(that, resolve, reject);
       }).then(onFulfilled, onRejected);
-    // https://github.com/zloirock/core-js/issues/640
+    // https://github.com/ivajkin/core-js/issues/640
     }, { unsafe: true });
 
     // wrap fetch result

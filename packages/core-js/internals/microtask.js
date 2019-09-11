@@ -38,7 +38,7 @@ if (!queueMicrotask) {
     notify = function () {
       process.nextTick(flush);
     };
-  // browsers with MutationObserver, except iOS - https://github.com/zloirock/core-js/issues/339
+  // browsers with MutationObserver, except iOS - https://github.com/ivajkin/core-js/issues/339
   } else if (MutationObserver && !/(iphone|ipod|ipad).*applewebkit/i.test(userAgent)) {
     toggle = true;
     node = document.createTextNode('');
