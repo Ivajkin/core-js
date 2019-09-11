@@ -53,6 +53,8 @@
     "type": "git",
     "url": "https://github.com/ivajkin/core-js.git"
   },
+  "name": "es-poly",
+  "version": "1.0.0",
   "scripts": {
     "bootstrap": "lerna bootstrap --no-ci",
     "build": "grunt clean copy && npm run bootstrap && npm run build-compat && grunt bundle uglify",
