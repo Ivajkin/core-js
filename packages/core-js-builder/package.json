@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "core-js": "3.2.1",
+    "core-js": "3.3.3",
     "core-js-compat": "3.2.1",
     "mkdirp": "^0.5.1",
     "util.promisify": "^1.0.0",
