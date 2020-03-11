@@ -10,7 +10,7 @@
   "dependencies": {
     "core-js": "3.2.1",
     "core-js-compat": "3.2.1",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.0",
     "util.promisify": "^1.0.0",
     "webpack": "^4.39.3"
   },
